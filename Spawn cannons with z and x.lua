@@ -2,6 +2,7 @@
 Since /mort will not work, mice can type !die, !mort or !kill to mort instead.
 You can change the cannon speed by using !speed command, the range should be from 20-100.
 e.g: !speed 90
+]]
 
 local funcrops = { Daichi = true, Icey00008 = true, Kalani = true, Karl = true, +zen = true }
 local speed = 70
