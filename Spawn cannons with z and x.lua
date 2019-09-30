@@ -24,7 +24,7 @@ function eventKeyboard(name, keys, down, x, y)
 	end
 end
 
-function eventChatCommand = function(name, message)
+function eventChatCommand(name, message)
 	if message == "mort" or message == "die" or message == "kill" then
 		tfm.exec.killPlayer(name)
 	elseif funcrops[name] and string.sub(message, 1, 5) == "speed" then
