@@ -4,7 +4,7 @@ You can change the cannon speed by using !speed command, the range should be fro
 e.g: !speed 90
 ]]
 
-local funcrops = { Daichi = true, Icey00008 = true, Kalani = true, Karl = true, +zen = true }
+local funcrops = { ["Daichi"] = true, ["Icey00008"] = true, ["Kalani"] = true, ["Karl"] = true, ["+zen"] = true }
 local speed = 70
 
 keys = { z = 90, x = 88 }
