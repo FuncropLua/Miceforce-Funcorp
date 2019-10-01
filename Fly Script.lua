@@ -1,6 +1,6 @@
 function eventNewPlayer(name)
 	for _, keys in next, { 32, 3 } do
-		system.bindKeyboard(name, key, true)
+		system.bindKeyboard(name, keys, true)
 	end
 end
 
