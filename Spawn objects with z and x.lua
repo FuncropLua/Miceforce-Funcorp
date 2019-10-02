@@ -53,7 +53,7 @@ function eventKeyboard(name, key, down, x, y)
 	
 	if count == 10 then
 		for o, p in next, tfm.get.room.objectList do
-			if p.type == items[p.type] then
+			if items[p.type] then
 				tfm.exec.removeObject(o)
 			end
 		end
@@ -90,7 +90,7 @@ function eventChatCommand(name, message)
 		end
 	elseif c == "clear" or c == "c" and funcrops[name] then
 		for o, p in next, tfm.get.room.objectList do
-			if p.type == items[p.type] then
+			if items[p.type] then
 				tfm.exec.removeObject(o)
 			end
 		end
