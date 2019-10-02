@@ -18,6 +18,7 @@ local text = [[
 <a href = 'event:95'><font color = '#2F7FCC'>•<J> Paper Ball</a>
 <a href = 'event:89'><font color = '#2F7FCC'>•<J> Pumpkin Ball</a>
 ]]
+local items = { 10 = true, 39 = true, 6 = true, 23 = true, 27 = true, 33 = true , 34 = true, 95 = true, 89 = true }
 local funcrops = { ["Daichi"] = true, ["Icey00008"] = true, ["Kalani"] = true, ["Karl"] = true, ["+zen"] = true }
 local obj, speed, count = 17, 25, 0
 
@@ -52,7 +53,7 @@ function eventKeyboard(name, key, down, x, y)
 	
 	if count == 10 then
 		for o, p in next, tfm.get.room.objectList do
-			if p.type == 17 then
+			if p.type == items[p.type] then
 				tfm.exec.removeObject(o)
 			end
 		end
@@ -86,6 +87,12 @@ function eventChatCommand(name, message)
 			end
 		else
 			speed = 25
+		end
+	elseif c == "clear" or c == "c" and funcrops[name] then
+		for o, p in next, tfm.get.room.objectList do
+			if p.type == items[p.type] then
+				tfm.exec.removeObject(o)
+			end
 		end
 	end
 end
