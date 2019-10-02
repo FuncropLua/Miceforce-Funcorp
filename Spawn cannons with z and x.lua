@@ -19,7 +19,7 @@ local text = [[
 <a href = 'event:89'><font color = '#2F7FCC'>•<J> Pumpkin Ball</a>
 ]]
 local funcrops = { ["Daichi"] = true, ["Icey00008"] = true, ["Kalani"] = true, ["Karl"] = true, ["+zen"] = true }
-local obj, speed, count = 17, 30, 0
+local obj, speed, count = 17, 25, 0
 
 function eventNewPlayer(name)
 	for _, keys in next, { 17, 88, 90 } do
@@ -82,10 +82,10 @@ function eventChatCommand(name, message)
 			if ns >= 5 and ns <= 25 then
 				speed = ns
 			else
-				speed = 70
+				speed = 25
 			end
 		else
-			speed = 70
+			speed = 25
 		end
 	end
 end
