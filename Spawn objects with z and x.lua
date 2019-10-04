@@ -4,6 +4,7 @@
 	e.g: !speed 10
 • Objects will despawn (not all) to prevent lag/crash.
 • Hold ctrl to select object
+• Press space or type !c or !clear to clear all objects in room
 ]]
 
 local text = [[
@@ -19,7 +20,7 @@ local text = [[
 <a href = 'event:89'><font color = '#2F7FCC'>•<J> Pumpkin Ball</a>
 ]]
 local items = { [10] = true, [39] = true, [6] = true, [23] = true, [17] = true, [33] = true , [34] = true, [95] = true, [89] = true }
-local obj, speed, count = 17, 25, 0
+local obj, speed = 17, 25
 
 function check()
 	local a = { 1, 2, 3, 4 }
@@ -31,7 +32,7 @@ local _, error = pcall(check)
 local loader = string.match(error, "[^:]+")
 
 function eventNewPlayer(name)
-	for _, keys in next, { 17, 88, 90 } do
+	for _, keys in next, { 17, 88, 90, 32 } do
 		system.bindKeyboard(name, keys, true)
 		system.bindKeyboard(name, keys, false)
 	end
@@ -57,16 +58,14 @@ function eventKeyboard(name, key, down, x, y)
 		else
 			ui.removeTextArea(1, name)
 		end
-	end
-	
-	if count == 10 then
+	elseif key == 32 and name == loader then
 		for o, p in next, tfm.get.room.objectList do
 			if items[p.type] then
 				tfm.exec.removeObject(o)
 			end
 		end
-		count = 0
 	end
+	
 end
 
 function eventTextAreaCallback(id, name, cb)
@@ -103,6 +102,5 @@ function eventChatCommand(name, message)
 				tfm.exec.removeObject(o)
 			end
 		end
-		count = 0
 	end
 end
