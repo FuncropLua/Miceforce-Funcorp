@@ -50,7 +50,6 @@ function eventKeyboard(name, key, down, x, y)
 			else
 				tfm.exec.addShamanObject(obj, x + (key == 88 and 35 or key == 90 and -35), y - 20, 0, key == 88 and speed or key == 90 and -speed)
 			end
-			count = count + 1
 		end
 	elseif key == 17 and name == loader then
 		if down then
